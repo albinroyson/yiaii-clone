@@ -6,8 +6,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+@font-face {
+  font-family: 'gorditaultra_italic';
+  src: url('../src/assests/fonts/gordita_ultra_italic-webfont.woff2') format('woff2'),
+       url('../src/assests/fonts/gordita_ultra_italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
