@@ -5,70 +5,83 @@ import profilepic from "../assests/images/jayasurya.jpg"
 export default function Wishessection() {
   return (
     <Wishescontainer>
-      <Wisheswrapper>
-        <Top>
-          <Title>
-            TEFUN-ന്
-          </Title>
-          <Head>
-            ആശംസകളോടെ
-          </Head>
-        </Top>
-        <Profilelist>
-          <Listitems>
-              <Picture src={profilepic} alt="profile" />
-              <Namecontaier className='Namehover'>
-                <Name>Jayasurya</Name>
-                <Role>Actor</Role>
-                <Watchbutton className='buttonhover'>WATCH STORY</Watchbutton>
-              </Namecontaier>
-          </Listitems>
-          <Listitems>
-              <Picture src={profilepic} alt="profile" />
-              <Namecontaier className='Namehover'>
-                <Name>Jayasurya</Name>
-                <Role>Actor</Role>
-                <Watchbutton className='buttonhover'>WATCH STORY</Watchbutton>
-              </Namecontaier>
-          </Listitems>
-          <Listitems>
-              <Picture src={profilepic} alt="profile" />
-              <Namecontaier className='Namehover'>
-                <Name>Jayasurya</Name>
-                <Role>Actor</Role>
-                <Watchbutton className='buttonhover'>WATCH STORY</Watchbutton>
-              </Namecontaier>
-          </Listitems>
-          <Listitems>
-              <Picture src={profilepic} alt="profile" />
-              <Namecontaier className='Namehover'>
-                <Name>Jayasurya</Name>
-                <Role>Actor</Role>
-                <Watchbutton className='buttonhover'>WATCH STORY</Watchbutton>
-              </Namecontaier>
-          </Listitems>
-          <Listitems>
-              <Picture src={profilepic} alt="profile" />
-              <Namecontaier className='Namehover'>
-                <Name>Jayasurya</Name>
-                <Role>Actor</Role>
-                <Watchbutton className='buttonhover'>WATCH STORY</Watchbutton>
-              </Namecontaier>
-          </Listitems>
-          <Listitems>
-              <Picture src={profilepic} alt="profile" />
-              <Namecontaier className='Namehover'>
-                <Name>Jayasurya</Name>
-                <Role>Actor</Role>
-                <Watchbutton className='buttonhover'>WATCH STORY</Watchbutton>
-              </Namecontaier>
-          </Listitems>
-        </Profilelist>
-      </Wisheswrapper>
-    </Wishescontainer>
-      
-  )
+        <Wisheswrapper>
+            <Top>
+            <Title>
+                TEFUN-ന്
+            </Title>
+            <Head>
+                ആശംസകളോടെ
+            </Head>
+            </Top>
+            <Profilelist>
+                <Listitems>
+                    <Picturecontainer>
+                        <Picture src={profilepic} alt="profile" />  
+                    </Picturecontainer>
+                    <Namecontaier className='Namehover'>
+                        <Name>Jayasurya</Name>
+                        <Role>Actor</Role>
+                        <Watchbutton className='buttonhover'>WATCH STORY</Watchbutton>
+                    </Namecontaier>
+                </Listitems>
+                <Listitems>
+                    <Picturecontainer>
+                        <Picture src={profilepic} alt="profile" />  
+                    </Picturecontainer>
+                    <Namecontaier className='Namehover'>
+                        <Name>Jayasurya</Name>
+                        <Role>Actor</Role>
+                        <Watchbutton className='buttonhover'>WATCH STORY</Watchbutton>
+                </Namecontaier>
+                </Listitems>
+                <Listitems>
+                    <Picturecontainer>
+                    <Picture src={profilepic} alt="profile" />  
+                    </Picturecontainer>
+                    <Namecontaier className='Namehover'>
+                        <Name>Jayasurya</Name>
+                        <Role>Actor</Role>
+                        <Watchbutton className='buttonhover'>WATCH STORY</Watchbutton>
+                    </Namecontaier>
+                </Listitems>
+                <Listitems>
+                    <Picturecontainer>
+                        <Picture src={profilepic} alt="profile" />  
+                    </Picturecontainer>
+                    <Namecontaier className='Namehover'>
+                        <Name>Jayasurya</Name>
+                        <Role>Actor</Role>
+                        <Watchbutton className='buttonhover'>WATCH STORY</Watchbutton>
+                    </Namecontaier>
+                </Listitems>
+                <Listitems>
+                    <Picturecontainer>
+                    <Picture src={profilepic} alt="profile" />  
+                    </Picturecontainer>
+                    <Namecontaier className='Namehover'>
+                        <Name>Jayasurya</Name>
+                        <Role>Actor</Role>
+                        <Watchbutton className='buttonhover'>WATCH STORY</Watchbutton>
+                    </Namecontaier>
+                </Listitems>
+                <Listitems>
+                    <Picturecontainer>
+                    <Picture src={profilepic} alt="profile" />  
+                    </Picturecontainer>
+                    <Namecontaier className='Namehover'>
+                    <Name>Jayasurya</Name>
+                    <Role>Actor</Role>
+                    <Watchbutton className='buttonhover'>WATCH STORY</Watchbutton>
+                    </Namecontaier>
+                </Listitems>
+            </Profilelist>
+        </Wisheswrapper>
+    </Wishescontainer>  
+    )
 }
+
+
 const Wishescontainer =styled.section`
   padding-top:100px;`
 const Wisheswrapper =styled.section`
@@ -100,13 +113,18 @@ const Listitems =styled.li`
   margin:10px 10px;
   position:relative;
   `
-const Picture =styled.img``
+const Picturecontainer=styled.div`
+
+`
+const Picture =styled.img`
+`
 const Namecontaier=styled.div`
   position: absolute;
   bottom:10px;
   right:0;
   left:0;
   align-items: center;
+
 
 ` 
 const Name=styled.h3`

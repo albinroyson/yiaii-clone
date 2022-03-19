@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ai from "../assests/images/ai.jpg" 
+import card from "../assests/images/card.svg"
 
 export default function NewTech() {
   return (
@@ -12,43 +13,7 @@ export default function NewTech() {
             </Topcontianer>
             <Techlist>
                 <Techitem>
-                <Techimagecontainer>
-                        <Techimage src={ai} alt="ai" />
-                    </Techimagecontainer>
-                    <TectTitle>Artificial Intelligence</TectTitle>
-                </Techitem>
-                <Techitem>
-                <Techimagecontainer>
-                        <Techimage src={ai} alt="ai" />
-                    </Techimagecontainer>
-                    <TectTitle>Artificial Intelligence</TectTitle>
-                </Techitem>
-                <Techitem>
-                <Techimagecontainer>
-                        <Techimage src={ai} alt="ai" />
-                    </Techimagecontainer>
-                    <TectTitle>Artificial Intelligence</TectTitle>
-                </Techitem>
-                <Techitem>
-                <Techimagecontainer>
-                        <Techimage src={ai} alt="ai" />
-                    </Techimagecontainer>
-                    <TectTitle>Artificial Intelligence</TectTitle>
-                </Techitem>
-                <Techitem>
-                <Techimagecontainer>
-                        <Techimage src={ai} alt="ai" />
-                    </Techimagecontainer>
-                    <TectTitle>Artificial Intelligence</TectTitle>
-                </Techitem>
-                <Techitem>
-                <Techimagecontainer>
-                        <Techimage src={ai} alt="ai" />
-                    </Techimagecontainer>
-                    <TectTitle>Artificial Intelligence</TectTitle>
-                </Techitem>
-                <Techitem>
-                <Techimagecontainer>
+                    <Techimagecontainer>
                         <Techimage src={ai} alt="ai" />
                     </Techimagecontainer>
                     <TectTitle>Artificial Intelligence</TectTitle>
@@ -59,13 +24,52 @@ export default function NewTech() {
                     </Techimagecontainer>
                     <TectTitle>Artificial Intelligence</TectTitle>
                 </Techitem>
+                <Techitem>
+                    <Techimagecontainer>
+                        <Techimage src={ai} alt="ai" />
+                    </Techimagecontainer>
+                    <TectTitle>Artificial Intelligence</TectTitle>
+                </Techitem>
+                <Techitem>
+                    <Techimagecontainer>
+                        <Techimage src={ai} alt="ai" />
+                    </Techimagecontainer>
+                    <TectTitle>Artificial Intelligence</TectTitle>
+                </Techitem>
+                <Techitem>
+                    <Techimagecontainer>
+                        <Techimage src={ai} alt="ai" />
+                    </Techimagecontainer>
+                    <TectTitle>Artificial Intelligence</TectTitle>
+                </Techitem>
+                <Techitem>
+                    <Techimagecontainer>
+                        <Techimage src={ai} alt="ai" />
+                    </Techimagecontainer>
+                    <TectTitle>Artificial Intelligence</TectTitle>
+                </Techitem>
+                <Techitem>
+                    <Techimagecontainer>
+                        <Techimage src={ai} alt="ai" />
+                    </Techimagecontainer>
+                    <TectTitle>Artificial Intelligence</TectTitle>
+                </Techitem>
+                <Techitem>
+                    <Techimagecontainer>
+                        <Techimage src={ai} alt="ai" />
+                    </Techimagecontainer>
+                    <TectTitle>Artificial Intelligence</TectTitle>
+                    <Cardcontainer className='cards'>
+                        <Card src={card} alt="card" />
+                    </Cardcontainer>
+                </Techitem>
             </Techlist>
         </NewWrapper>
     </Newcontainer>
   )
 }
 const Newcontainer=styled.section`
-    padding-top:50px;`
+    padding: 50px 0px;`
 const NewWrapper=styled.section`
     width:85%;
     margin:0 auto;`
@@ -84,15 +88,47 @@ const Title=styled.h3`
     font-weight:400;`
 const Techlist=styled.ul`
     display:flex;
-    justify-content: center;
+    justify-content: space-between;
+    width:100%;
     flex-wrap:wrap;
-    align-items: center;`
+    align-items: center;
+    margin-top: 40px;`
 const Techitem=styled.li`
-    width:30%;
-    margin:10px 10px;
-    background:#e3f4e6;`
+    width: calc(25% - 20px);
+    border-radius: 10px;
+    margin: 0px 10px 20px;
+    padding: 15px;
+    background: #000;
+    position: relative;
+    &:nth-child(1n){
+        background: #e3f4e6;
+    }
+    &:nth-child(2n){
+        background: #fff8e4;
+    }
+    &:nth-child(3n){
+        background: #efeafa;
+    }
+    &:nth-child(4n){
+        background: #ebf2fa;
+    }
+    &:last-child {
+        
+    }
+    `
 const Techimagecontainer=styled.div`
-    width:60%;
+    width:100%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px; 
 `
 const Techimage=styled.img``
-const TectTitle=styled.h3``
+const TectTitle=styled.h3`
+    text-align:center;
+    padding:20px;`
+const Cardcontainer=styled.div`
+    width: 100%;
+    position: absolute;
+    right: -133px;
+    bottom: -42%;`
+const Card=styled.img``
