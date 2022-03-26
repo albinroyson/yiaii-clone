@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import ai from "../assests/images/ai.jpg" 
-import card from "../assests/images/card.svg"
+import ai from "../../assests/images/ai.jpg" 
+import card from "../../assests/images/card.svg"
 
 export default function NewTech() {
   return (
     <Newcontainer>
-        <NewWrapper>
+        <NewWrapper className='wrapper'>
             <Topcontianer>
                 <Head>പുതിയ ടെക്ക്നോളജികൾ മനസ്സിലാക്കാം</Head>
                 <Title>ടെക്ക്-പഠനം വേറിട്ടതും, ക്രിയാത്മകവുമാക്കാൻ കഴിയുന്ന സിലബസ്.</Title>
@@ -69,10 +69,10 @@ export default function NewTech() {
   )
 }
 const Newcontainer=styled.section`
-    padding: 50px 0px;`
+    padding: 50px 0px;
+`
 const NewWrapper=styled.section`
-    width:85%;
-    margin:0 auto;`
+`
 const Topcontianer=styled.div``
 const Head=styled.span`
     text-align:center;
@@ -89,7 +89,8 @@ const Title=styled.h3`
 const Techlist=styled.ul`
     display:flex;
     justify-content: space-between;
-    width:100%;
+    width: 88%;
+    margin: 0 auto;
     flex-wrap:wrap;
     align-items: center;
     margin-top: 40px;`
@@ -113,9 +114,10 @@ const Techitem=styled.li`
         background: #ebf2fa;
     }
     &:last-child {
-        
+             
     }
-    `
+    cursor: pointer;
+`
 const Techimagecontainer=styled.div`
     width:100%;
     margin: 0 auto;

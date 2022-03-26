@@ -35,7 +35,6 @@ input,textarea,select{
 	font-weight: 500;
     font-family: 'GT-Eesti';
 }
-
 a{
 	color: #000;
     font-family: 'GT-Eesti';
@@ -58,7 +57,7 @@ img{
 	display: block;
 }
 span{
-  color: #4ea870;
+  	color: #4ea870;
 }
 .activebackground{
 	box-shadow: rgb(0 0 0 / 3%) 0px 16px 24px;
@@ -66,19 +65,32 @@ span{
     backdrop-filter: blur(8px);
 }
 .Namehover:hover{
-	bottom: 20px;
+	/* bottom: 20px; */
 	transition: all 0.3s ease 0s;
     cursor: pointer;
-
 }
 .Namehover:hover .buttonhover{
 	transition: all 0.3s ease 0s;
 	opacity: 1;
-	padding: 14px 7px;
-	
-
+	height: 40px;
 }
 small{
 	color: #000;
 	font-size: 45px;
+}
+.wrapper{
+	margin:0 auto;
+    width:95%;
+    max-width:1280px;
+}
+.gray{
+	display:block;
+}
+.color{
+	display:none
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

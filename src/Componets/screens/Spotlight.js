@@ -1,16 +1,22 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
-import Tefonlogo from "../assests/images/Tefun.svg"
-import Media from "../assests/images/640.svg"
-import Main  from "../assests/images/spot-min.jpeg"
-import app from "../assests/images/grey-app-play.svg"
-import google from "../assests/images/grey-and-play.svg"
-import arrow from "../assests/images/arrow.svg"
+import Tefonlogo from "../../assests/images/Tefun.svg"
+import Media from "../../assests/images/640.svg"
+import Main  from "../../assests/images/spot-min.jpeg"
+import app from "../../assests/images/grey-app-play.svg"
+import google from "../../assests/images/grey-and-play.svg"
+import arrow from "../../assests/images/arrow.svg"
+import Joinnow from '../includes/modals/Joinnow';
 
 export default function Spotlight() {
+    const [join, setJoin] = useState(false);
+    const renderjoin=()=>{
+        setJoin(!join)
+      }
+
   return (
-      <Spotlightcontainer>
-        <Spotlightwrapper>
+    <Spotlightcontainer>
+        <Spotlightwrapper className='wrapper'>
             <Leftcontainer>
                 <Tefoncontainer>
                   <Tefon src={Tefonlogo} />
@@ -25,7 +31,7 @@ export default function Spotlight() {
                   <Medialogo src={Media}/>
                 </Mediacontainer>
                 <Buttoncontainer>
-                    <Joinbutton>Join For Free</Joinbutton>
+                    <Joinbutton  onClick={renderjoin}>Join For Free</Joinbutton>
                     <Registerbutton>Register school</Registerbutton>
                 </Buttoncontainer>
             </Leftcontainer>
@@ -46,6 +52,7 @@ export default function Spotlight() {
                 </Downloadimages>
             </Rightcontainer>
         </Spotlightwrapper>
+        <Joinnow join={join} setJoin={setJoin}/>
     </Spotlightcontainer>
   )
 }
@@ -56,10 +63,9 @@ const Spotlightwrapper=styled.section`
     display:flex;
     justify-content:space-between;
     background:#f3f9eb;
+    background-image: url("https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/tefun/28-01-2022/lines-bg.svg");
     border-radius:35px;
     padding: 5% 50px;
-    width:95%;
-    margin:0 auto;
     `
 const Leftcontainer=styled.div`
     width:45%;
@@ -117,8 +123,7 @@ const Joinbutton=styled.button`
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
-    }
-      
+    } 
    `
 const Registerbutton=styled.button`
     display: block;
@@ -127,37 +132,44 @@ const Registerbutton=styled.button`
     border-radius: 10px;
     border: 1px solid #72c1c5;
     background: white;
-    color: #68c8a4;`
+    color: #68c8a4;
+    cursor: pointer;
+`
 const Rightcontainer=styled.div`
     width: 53%;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
-    position:relative;`
+    position:relative;
+`
 const Mainimagecontainer=styled.div`
     border:10px;
-  `
+`
 const Mainimage=styled.img`
     display:block;
     width:100%;
     border-radius: 30px;
     transform: rotate(2deg);
-    `
+`
 const Arrowcontainer=styled.div`
     position: relative;
     bottom: 91px;
     left: -93px;
     width: 25%;
-    `
+`
 const Arrow=styled.img``
 const Downloadimages=styled.div`
     display:flex;
-    justify-content:end;`
+    justify-content:end;
+`
 const Appstorecontaier=styled.div`
     width:28%;
     margin-right: 10px;
-    `
-const Appimage=styled.img``
+`
+const Appimage=styled.img`
+    cursor: pointer;`
 const Googlecontaier=styled.div`
-    width:28%;`
-const Googleimage=styled.img``
+    width:28%;
+`
+const Googleimage=styled.img`
+    cursor:pointer;`

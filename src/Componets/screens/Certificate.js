@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import medal from "../assests/images/medal.svg" 
-import certificate from "../assests/images/certificate.png"
-import arrow from "../assests/images/arrow.svg"
+import medal from "../../assests/images/medal.svg" 
+import certificate from "../../assests/images/certificate.png"
+import arrow from "../../assests/images/arrow.svg"
 
 export default function Certificate() {
   return (
     <Maincontainer>
-        <Mainwrapper>
+        <Mainwrapper className='wrapper'>
             <Leftcontainer>
                 <Head>
                     Certification
@@ -34,21 +34,19 @@ export default function Certificate() {
 
 
 const Maincontainer=styled.section`
-    padding: 80px 0px;`
+    padding: 80px 0px;
+`
 const Mainwrapper=styled.section`
-    width:90%;
-    margin:0 auto;
     background-image: linear-gradient(to right, rgb(99, 187, 76) 0%, rgb(24, 152, 175) 100%);
     display:flex;
     border-radius: 20px;
     align-items: center;
-
-    `
+`
 const Leftcontainer=styled.div`
     width:40%;
     margin: 85px 50px;
     position:relative;
-    `
+`
 const Head=styled.h3`
     color: rgb(255, 255, 255);
     font-size: 35px;`
@@ -61,11 +59,13 @@ const Discription=styled.p`
 const Medalcontainer=styled.div`
     width: 7%;
     position: absolute;
-    top: -80px;`
+    top: -80px;
+`
 const Medal=styled.img``
 const Rightcontianer=styled.div`
     width:45%;
-    position:relative;`
+    position:relative;
+`
 const Mainimagecontaier=styled.div`
     position: absolute;
     display: block;
@@ -79,5 +79,6 @@ const Arrowcontainer=styled.div`
     position: absolute;
     bottom: -279px;
     left: -157px;
-   `
-const Arrows=styled.img``
+`
+const Arrows=styled.img`
+`
