@@ -7,6 +7,8 @@ import app from "../../assests/images/grey-app-play.svg"
 import google from "../../assests/images/grey-and-play.svg"
 import arrow from "../../assests/images/arrow.svg"
 import Joinnow from '../includes/modals/Joinnow';
+import {Link,} from "react-router-dom";
+
 
 export default function Spotlight() {
     const [join, setJoin] = useState(false);
@@ -32,7 +34,7 @@ export default function Spotlight() {
                 </Mediacontainer>
                 <Buttoncontainer>
                     <Joinbutton  onClick={renderjoin}>Join For Free</Joinbutton>
-                    <Registerbutton>Register school</Registerbutton>
+                    <Registerbutton to="/register">Register school</Registerbutton>
                 </Buttoncontainer>
             </Leftcontainer>
             <Rightcontainer>
@@ -125,7 +127,7 @@ const Joinbutton=styled.button`
     transition: all .4s ease-in-out;
     } 
    `
-const Registerbutton=styled.button`
+const Registerbutton=styled(Link)`
     display: block;
     font-size: 20px;
     padding: 26px 63px;

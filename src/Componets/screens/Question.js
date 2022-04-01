@@ -48,7 +48,7 @@ export default function Question() {
                         }
                         }}> 
                         <Questions>{qstn.Question}</Questions>
-                        <Arrowcontainer className={selectedid === qstn.id? "down" : ""}>
+                        <Arrowcontainer className={selectedid === qstn.id? "down" : "up"}>
                             <Arrow src={downarrow} alt="downarrow" />
                         </Arrowcontainer>
                     </Questionsection>
@@ -116,7 +116,13 @@ const Arrowcontainer=styled.div`
         transform: rotate(180deg);
         transition: all .4s ease-in-out;
 
-    }`
+    }
+    &.up{
+        transform: rotate(0deg);
+        transition: all .4s ease-in-out;
+
+    }
+`
 
 const Arrow=styled.img``
 const Answer=styled.p`

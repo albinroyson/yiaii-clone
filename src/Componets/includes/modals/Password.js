@@ -1,104 +1,63 @@
-import React,{useState} from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import india from "../../../assests/images/india.jpeg"
-import arrow from "../../../assests/images/down-arrow.svg"
-import phone from "../../../assests/images/phone.svg"
-import Country from './Country'
-import Password from './Password'
 import {useSearchParams} from "react-router-dom";
-import Signup from './Signup'
+import {Link,} from "react-router-dom";
 
+export default function Password({password,setPassword}) {
 
-export default function Joinnow({join,setJoin}) {
-    const [selected,setSelected]=useState("")
-
-    const closejoin=()=>{
-        setJoin(!join)
-        setCode(false)
-        setSearchParams()
-      }
-
-    const [code, setCode] = useState(false);
-    const rendercode=()=>{
-        setCode(!code)
-    }
-    const [phoneinput,setPhoneinput]= useState("")
-    const [password,setPassword]=useState(false)
-    const renderpassword=()=>{
+    const closepassword=()=>{
         setPassword(!password)
-        setSearchParams({action:"password"})
-        setJoin(!join)
+        setSearchParams()
     }
-    const [signup,setSignup]=useState(false)
-    const rendersignup=()=>{
-        setSignup(!signup)
-        setJoin(!join)
-    }
+
     const[searchParams,setSearchParams]=useSearchParams();
-    
+
   return (
-    
-    <Joinnowcontainer className={join ?"active" :""}>
-        <Joinwrapper >
+    <Passwordcontainer className={password ?"active" :""}>
+        <Passwordwrapper>
             <Left>
             </Left>
             <Right>
-                <Closecontainer onClick={closejoin}>
+                <Closecontainer onClick={closepassword} >
                     <Close src={require("../../../assests/images/close.svg").default} alt="close" />
                 </Closecontainer>
-                <Logintitle>
-                    Login to your account
-                </Logintitle>
+                <Passwordtitle>
+                    Password
+                </Passwordtitle>
                 <Enter>
-                    Enter your registered phone number
+                    Enter your password for this account
                 </Enter>
                 <Inputdiv>
-                    <Countrydiv>
-                        <Countryimagecontainer>
-                            <Countryimage src={selected.flag ? selected.flag : india } alt="countryimage" />
-                        </Countryimagecontainer>
-                        <Arrowcontainer>
-                            <Arrow src={arrow} onClick={rendercode}  alt="arrow" />
-                        </Arrowcontainer>
-                    </Countrydiv>
                     <Inputfeild>
                         <Phoneimagecontainer>
-                            <Phone src={phone} alt="phone" />
+                            <Phone src={require("../../../assests/images/lock.svg").default} alt="phone" />
                         </Phoneimagecontainer>
-                        <Digit>{selected.phone_code ? selected.phone_code : +91 }</Digit>
-                        <Input type="number"  name="name" placeholder="Enter your  Phonenumber" onChange={(e)=>setPhoneinput(e.target.value)}/>
-                    </Inputfeild>
-                       
+                        <Input type="number"  name="name" placeholder="Enter password" />
+                    </Inputfeild>  
                 </Inputdiv>
-                {
-                    phoneinput === "" ? <P>Please enter your phonenumber</P>  : ""
-                }
                 
-                <Button onClick={renderpassword}>Next</Button>
+                <Button to="/profile">Next</Button>
                 <Newdiv>
                     <New>New to Yiaai? </New>
-                    <Createlink onClick={rendersignup}>Create an account</Createlink>
+                    <Link3 >Create an account</Link3>
                 </Newdiv>
                 <Terms>
                     <Link2>Terms of service</Link2>
                 </Terms>
-            </Right>                   
-           <Country code={code} setCode={setCode} selected={selected} setSelected={setSelected} />
-           <Password  password={password} setPassword={setPassword} />
-           <Signup signup={signup} setSignup={setSignup} setJoin={setJoin}/>
-        </Joinwrapper>
-    </Joinnowcontainer>
+            </Right>
+        </Passwordwrapper>
+    </Passwordcontainer>
   )
 }
 
 
-const Joinnowcontainer=styled.section`
+const Passwordcontainer=styled.section`
     position: fixed;
     height:100vh;
     width: 100%;
     top:0;
     right:-100%;
-    z-index: 10;
+    z-index: 30;
     animation: 0.4s ease 0s 1 normal none running slide-box;
     &.active{
         right: 0;
@@ -107,7 +66,7 @@ const Joinnowcontainer=styled.section`
       -webkit-transition: all .4s ease-in-out;
       transition: all .4s ease-in-out;
     }`
-const Joinwrapper=styled.section`
+const Passwordwrapper=styled.section`
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -146,7 +105,7 @@ const Right=styled.div`
     padding:100px 60px;
     background-color: rgb(255, 255, 255);
    `
-const Logintitle=styled.h3`
+const Passwordtitle=styled.h3`
     margin-top: 50px;
     font-weight: 100;
     font-size: 28px;`
@@ -161,24 +120,6 @@ const Inputdiv=styled.div`
     margin-top: 40px;
 
     `
-const Countrydiv=styled.div`
-    display:flex;
-    align-items: center;
-    `
-const Countryimagecontainer=styled.div`
-    height: 42px;
-    width: 42px;
-    border-radius: 50%;
-    overflow: hidden;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    margin-right: 7px;`
-const Countryimage=styled.img`
-    object-fit: cover;`
-const Arrowcontainer=styled.div`
-    width:20%;`
-const Arrow=styled.img``
 const Inputfeild=styled.div`
     font-family: gordita_medium;
     position: relative;
@@ -198,7 +139,6 @@ const Phoneimagecontainer=styled.div`
     width: 4%;
     margin-right: 20px;`
 const Phone=styled.img``
-const Digit=styled.h3``
 const Input=styled.input`
     width: 81%;
     color: rgb(0, 0, 0);
@@ -208,7 +148,7 @@ const Input=styled.input`
     &:focus{
         outline: none;
     }`
-const Button=styled.button`
+const Button=styled(Link)`
     cursor: pointer;
     background: linear-gradient(272deg, rgb(34, 193, 195) 0%, rgb(99, 187, 76) 0%, rgb(24, 152, 175) 100%);
     border-radius: 6px;
@@ -218,10 +158,11 @@ const Button=styled.button`
     justify-content: center;
     -webkit-box-align: center;
     align-items: center;
-    margin: 0 auto;
+    margin: 40px auto;
     width:100%;
     color: rgb(255, 255, 255);
-    min-height: 50px;`
+    min-height: 50px;
+    text-decoration:none;`
 const Newdiv=styled.div`
     display: flex;
     -webkit-box-pack: center;
@@ -233,7 +174,7 @@ const New=styled.h3`
     font-size: 16px;
     font-weight: 300;
 `
-const Createlink=styled.button`
+const Link3=styled.a`
     color: rgb(92, 198, 106);
     font-size: 16px;
     margin-left: 7px;

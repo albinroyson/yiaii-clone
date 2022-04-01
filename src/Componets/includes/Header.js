@@ -2,11 +2,13 @@ import React, {useState,useEffect} from 'react'
 import styled from 'styled-components'
 import logo from "../../../src/assests/images/logo.svg"
 import Joinnow from '../includes/modals/Joinnow';
+import {useSearchParams} from "react-router-dom";
 
 export default function Header() {
 
   const[navbar,setNavbar]=useState(false);
   const [join, setJoin] = useState(false);
+  const[searchParams,setSearchParams]=useSearchParams();
 
 
 const changeBackground = () => {
@@ -22,6 +24,7 @@ const changeBackground = () => {
   })
   const renderjoin=()=>{
     setJoin(!join)
+    setSearchParams({action:"login"})
   }
 
 
@@ -32,7 +35,7 @@ const changeBackground = () => {
             <h1><Logo src={logo}></Logo></h1>
           </Leftcontainer>
           <Rightcontaier>
-            <Joinbutton onClick={renderjoin}>Join Now</Joinbutton>
+            <Joinbutton to="/login" onClick={renderjoin}>Join Now</Joinbutton>
           </Rightcontaier>
       </Headerwrapper>  
       <Joinnow join={join} setJoin={setJoin}/>

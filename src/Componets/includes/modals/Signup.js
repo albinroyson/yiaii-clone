@@ -4,41 +4,29 @@ import india from "../../../assests/images/india.jpeg"
 import arrow from "../../../assests/images/down-arrow.svg"
 import phone from "../../../assests/images/phone.svg"
 import Country from './Country'
-import Password from './Password'
+import {Link,} from "react-router-dom";
+
 import {useSearchParams} from "react-router-dom";
-import Signup from './Signup'
 
 
-export default function Joinnow({join,setJoin}) {
+export default function Signup({signup,setSignup}) {
     const [selected,setSelected]=useState("")
 
-    const closejoin=()=>{
-        setJoin(!join)
-        setCode(false)
-        setSearchParams()
-      }
+  
 
     const [code, setCode] = useState(false);
     const rendercode=()=>{
         setCode(!code)
     }
     const [phoneinput,setPhoneinput]= useState("")
-    const [password,setPassword]=useState(false)
-    const renderpassword=()=>{
-        setPassword(!password)
-        setSearchParams({action:"password"})
-        setJoin(!join)
-    }
-    const [signup,setSignup]=useState(false)
-    const rendersignup=()=>{
+    const closejoin=()=>{
         setSignup(!signup)
-        setJoin(!join)
-    }
-    const[searchParams,setSearchParams]=useSearchParams();
-    
+        setCode(false)
+      }
+
   return (
-    
-    <Joinnowcontainer className={join ?"active" :""}>
+ 
+    <Joinnowcontainer className={signup ?"active" :""} >
         <Joinwrapper >
             <Left>
             </Left>
@@ -47,10 +35,10 @@ export default function Joinnow({join,setJoin}) {
                     <Close src={require("../../../assests/images/close.svg").default} alt="close" />
                 </Closecontainer>
                 <Logintitle>
-                    Login to your account
+                    Join now with Yiaai
                 </Logintitle>
                 <Enter>
-                    Enter your registered phone number
+                    Explore the extensive range of programs curated by experts.
                 </Enter>
                 <Inputdiv>
                     <Countrydiv>
@@ -58,7 +46,7 @@ export default function Joinnow({join,setJoin}) {
                             <Countryimage src={selected.flag ? selected.flag : india } alt="countryimage" />
                         </Countryimagecontainer>
                         <Arrowcontainer>
-                            <Arrow src={arrow} onClick={rendercode}  alt="arrow" />
+                            <Arrow src={arrow}  alt="arrow" />
                         </Arrowcontainer>
                     </Countrydiv>
                     <Inputfeild>
@@ -68,24 +56,21 @@ export default function Joinnow({join,setJoin}) {
                         <Digit>{selected.phone_code ? selected.phone_code : +91 }</Digit>
                         <Input type="number"  name="name" placeholder="Enter your  Phonenumber" onChange={(e)=>setPhoneinput(e.target.value)}/>
                     </Inputfeild>
-                       
                 </Inputdiv>
                 {
                     phoneinput === "" ? <P>Please enter your phonenumber</P>  : ""
                 }
                 
-                <Button onClick={renderpassword}>Next</Button>
+                <Button>Next</Button>
                 <Newdiv>
-                    <New>New to Yiaai? </New>
-                    <Createlink onClick={rendersignup}>Create an account</Createlink>
+                    <New>Already have an account? </New>
+                    <Createlink>Login</Createlink>
                 </Newdiv>
                 <Terms>
                     <Link2>Terms of service</Link2>
                 </Terms>
             </Right>                   
            <Country code={code} setCode={setCode} selected={selected} setSelected={setSelected} />
-           <Password  password={password} setPassword={setPassword} />
-           <Signup signup={signup} setSignup={setSignup} setJoin={setJoin}/>
         </Joinwrapper>
     </Joinnowcontainer>
   )
